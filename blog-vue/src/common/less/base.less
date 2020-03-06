@@ -1,0 +1,74 @@
+@main-color:#1e3c72;
+@cp-color:#f9d423;
+
+// 图片默认间距
+.fas{
+    padding-right: .5rem;
+}
+// 文本隐藏
+.ellipsis {
+    display: block;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+// 多行文本隐藏
+.multi-ellipsis(@line: 2) {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: @line;
+}
+// 垂直水平居中
+.to-center{
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+// 默认弹窗样式
+.box-window{
+    padding: 2rem;
+    background-image: linear-gradient(to right, #fa709a 0%, #fee140 100%);
+    color: #fff;
+    text-align: center;
+    position: fixed;
+    .to-center;
+    border-radius: 10px;
+    border: 2px solid #fff;
+    transition: .8s;
+    .form-group{
+        text-align: left;
+    }
+    .btn{
+        background-color: #fff;
+        color:@main-color;
+        transition: .8s;
+        &:hover{
+            color:#fff;
+            background-color: @main-color;
+        }
+    }
+    .close-window{
+        position: absolute;
+        top: 1rem;
+        right: 2rem;
+        transition: .8s;
+        cursor: pointer;
+        &:hover{
+            color:@main-color
+        }
+    }
+    .tips{
+        position: absolute;
+        .to-center;
+        background-color: @cp-color;
+        min-width: 250px;
+        padding: .5rem;
+        transition: .5s;
+    }
+}
+// 移动弹窗
+.hide-window{
+    left: -50%!important;
+}
